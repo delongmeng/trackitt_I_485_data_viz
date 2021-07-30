@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -76,3 +77,81 @@
 
 
 
+||||||| b1d6b26
+=======
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Trackitt Employment-Based Green Card Application</title>
+    </head>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="./utilities.js"></script>
+    <style> </style>
+    <body style="width: 1000px" onload='init()'>
+        <p>
+            <h2>Working in the United States: Recent Trend of Employment-Based U.S. Green Card Application</h2>
+            Foreign workers apply for U.S. green card through Employment-Based immigration visa. The last step of this process, namely the filing of “Adjustment of Status”, is tightly regulated by “Visa Bulletin” to control the application numbers each month. Last October, there was a <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2021/visa-bulletin-for-october-2020.html">significant advancement</a> of Visa Bulletin, opening up a big window for application submission. So, are there many more applications submitted since then? Data shown here were downloaded (as of 7/24/2021) from a website called <a href="https://www.trackitt.com/usa-immigration-trackers/i485-eb">"Trackitt"</a>, where users share their data points of green card applications <em>(please note that this is not official data and bias may exist).</em> For simplicity, only data of fiscal year 2020 and 2021 (starting at October 1st of the previous year) are shown here, and the denied or rejected cases (usually due to filing errors) were removed from the analysis.  
+        </p>
+        <p><strong>Hover your mouse</strong> on the top of any circle and find out exact case number and approval rate of those cases:</p>
+        <div>
+            <svg width=1000 height=600>
+            </svg>
+        </div>
+        <p>This chart shows applications from China. How is this compared with applications from all countries? Note that although the total number is much less (we keep the axis the same for these different charts so it's easier to campare among them), there is still an obvious peak in October 2020 (around 15-fold increase). Please continue explore the data from applicants of other country categories or go back to all countries by clicking the buttons below:</p>
+        <a class="internalLink" href="./index.html" style="background-color: #f9b2b2;">All Countries</a>
+        <a class="internalLink" href="./India.html" style="background-color: #f9b2b2;">India</a> 
+        <a class="disabled" href="" style="background-color: #a8a8a8;">China</a> 
+        <a class="internalLink" href="./ROW.html" style="background-color: #f9b2b2;">Rest of World</a>  
+        <script>
+
+            function init() {
+                var country = "China";  
+                load_data(country);
+            }
+
+            const annotations = [
+              {
+                note: {
+                  label: "~ 15-fold increase (from ~7 to ~100 cases)",
+                  title: "October 2020"
+                },
+                type: d3.annotationCalloutCircle,
+                subject: {
+                  radius: 20,         // circle radius
+                  radiusPadding: 20   // white space around circle befor connector
+                },
+                color: ["#f9b2b2"],
+                x: 562,
+                y: 485,
+                dy: -100,
+                dx: 100
+              }
+            ]
+
+            // Add annotation to the chart
+            const makeAnnotations = d3.annotation()
+              .annotations(annotations)
+
+            d3.select("svg")
+              .append("g")
+              .call(makeAnnotations)   
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 75c081073f7fd8ff0f80f76539682d154bada5ce
